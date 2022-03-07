@@ -6,8 +6,11 @@ import 'package:naviagtion_named_routes/routes_names.dart';
 import 'package:naviagtion_named_routes/screen1.dart';
 import 'package:naviagtion_named_routes/screen2.dart';
 import 'package:naviagtion_named_routes/screen3.dart';
+import 'package:naviagtion_named_routes/screen4.dart';
 
 class Routes {
+  static final navigatorKey = GlobalKey<NavigatorState>();
+
   static Route<dynamic> generateRoute(RouteSettings settings) {
     switch (settings.name) {
       case RouteNames.initialRoute:
@@ -29,6 +32,14 @@ class Routes {
           greet: args.greet,
           name: args.name,
         ));
+      case RouteNames.fourthRoute:
+        Arguments args = settings.arguments as Arguments;
+        return MaterialPageRoute(
+          builder: (_) => Screen4(
+            greet: args.greet,
+            name: args.name,
+          ),
+        );
       default:
         return MaterialPageRoute(
             builder: (_) => Scaffold(

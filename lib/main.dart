@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:naviagtion_named_routes/routes.dart';
 import 'package:naviagtion_named_routes/routes_names.dart';
-import 'package:naviagtion_named_routes/screen1.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,11 +16,11 @@ class MyApp extends StatefulWidget {
 class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      navigatorKey: Routes.navigatorKey,
       debugShowCheckedModeBanner: false,
       initialRoute: RouteNames.initialRoute,
       onGenerateRoute: Routes.generateRoute,
-      home: Screen1(),
     );
   }
 }
